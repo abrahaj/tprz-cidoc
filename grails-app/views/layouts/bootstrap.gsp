@@ -19,7 +19,7 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li ><g:link controller="cidoc" action="index">Classes </g:link></li>
+          <li ><g:link controller="cidoc" action="index">Entities </g:link></li>
           <li><g:link controller="cidoc" action="properties">Properties</g:link></li>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span
               class="caret"></span></a>
