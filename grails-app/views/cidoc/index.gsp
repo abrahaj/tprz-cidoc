@@ -19,15 +19,15 @@
       <g:each in="${classes}" var="classNode">
         <tr>
           <td><a name="${classNode.name}"></a> <g:link controller="cidoc" action="classInformation" params="[id: classNode.name]">
-              <h3>
+              <h3 id="${classNode.name}">
                 ${classNode.name.replace("_"," ")}
               </h3>
             </g:link> <g:if test="${classNode?.subclasses}">
               <br>Subclass of:<br>
             </g:if> <g:each in="${classNode?.subclasses}" var="sub">
-              <g:link controller="cidoc" action="index" params="[code: sub]">
+              <g:link controller="cidoc" action="classInformation" params="[id: sub]">
                 ${sub}
-              </g:link>
+              </g:link><br/>
             </g:each></td>
           <td>
             ${classNode.comment.toString()}

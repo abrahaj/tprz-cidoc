@@ -18,29 +18,35 @@
       ${comment}
     </p>
     <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Property Name</th>
-        <th>Domain Range</th>
-      </tr>
-    </thead>
-    <tbody>
-      <g:each in="${domainRanges}" var="property">
+      <thead>
         <tr>
-          <td><a href="#" title="${property.name}" data-poload="/tprz-cidoc/cidoc/propertyComment/${property.name}" data-toggle="popover" data-trigger="focus" > ${property.name}
-        </a>
-          </td>
-          <td>
-            <a href="#" title="${property.range}" data-poload="/tprz-cidoc/cidoc/classComment/${property.range}" data-toggle="popover" data-trigger="focus" >
-          ${property.range}
-
-        </a>
-          </td>
+          <th>Property Name</th>
+          <th>Domain Range</th>
         </tr>
-      </g:each>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <g:each in="${domainRanges}" var="property">
+          <tr>
+            <td><a href="#" title="${property.name}" data-poload="/tprz-cidoc/cidoc/propertyComment/${property.name}" data-toggle="popover"
+              data-trigger="focus"> ${property.name}
+            </a></td>
+            <td><a href="#" title="${property.range}" data-poload="/tprz-cidoc/cidoc/classComment/${property.range}" data-toggle="popover"
+              data-trigger="focus"> ${property.range}
+            </a></td>
+          </tr>
+        </g:each>
+      </tbody>
+    </table>
 
+    <g:if test="${subclassesOff}">
+      <h3>Derives from the following classes</h3>
+    </g:if>
+    <g:each in="${subclassesOff}" var="sub">
+      <g:link controller="cidoc" action="classInformation" params="[id: sub]">
+        ${sub}
+      </g:link>
+      <br />
+    </g:each>
   </div>
 </body>
 </html>

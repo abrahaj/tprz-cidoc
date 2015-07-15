@@ -67,7 +67,12 @@ class CidocController {
                 lang.add([lang:it.attributes()."xml:lang",translation:it.text()])
             }
         }
-
+        def subclassesOff=[]
+        results.children().each{
+            if (it.name()=="rdfs:subClassOf"){
+                subclassesOff.add(it.attributes()."rdf:resource")
+            }
+        }
         def domainProperties=findClassProperties(id,xml)
         def domainRanges=[]
         domainProperties.each {
@@ -79,7 +84,7 @@ class CidocController {
             }
         }
 
-        render(view: "classInformation", model: [comment:results."rdfs:comment", id:id, lang:lang,domainRanges:domainRanges])
+        render(view: "classInformation", model: [comment:results."rdfs:comment", id:id, lang:lang,domainRanges:domainRanges,subclassesOff:subclassesOff])
     }
 
     /**
