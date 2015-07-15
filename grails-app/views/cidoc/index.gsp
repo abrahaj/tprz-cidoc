@@ -32,13 +32,10 @@
           <td>
             ${classNode.comment.toString()}
           </td>
-          <td><g:each in="${classNode.domainProperties}" var="property">
+          <td>Properties ${classNode.domainProperties.size()}
 
-              <a href="#" title="${property.attributes()."rdf:about"}" data-poload="/tprz-cidoc/cidoc/propertyComment/${property.attributes()."rdf:about"}"
-                data-toggle="popover" data-trigger="focus"> ${property.attributes()."rdf:about"}
-              </a>
-              <br />
-            </g:each></td>
+            
+            </td>
         </tr>
       </g:each>
     </tbody>
