@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TOPORAZ</title>
+<title>Properties CIDOC-CRM</title>
 <meta name="layout" content="bootstrap" />
 </head>
 <body>
@@ -18,7 +18,7 @@
         <tr>
           <td>
            <%--<g:link controller="icd10" action="secondLevel" params="[code:chapter.code]"> ${class."rdf-about" }</g:link>
-           --%>${property.name}
+           --%><a name="${property.name}"></a>${property.name}
           </td>
           <td>
           <g:if test="${property.comment}" >
